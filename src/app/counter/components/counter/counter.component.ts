@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-counter',
   template: `
     <h3>
-      contador: {{counter }}
+      contador: {{counter}}
     </h3>
     <!--
       se le dice cuanto tendra que incrementar,
