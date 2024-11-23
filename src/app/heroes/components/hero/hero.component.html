@@ -1,0 +1,40 @@
+
+
+
+<h1> {{name}} </h1>
+
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+  <dd></dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{capitalizedName}}</dd>
+
+  <td>Descripcion:</td>
+  <dd>{{ getHeroDescription()  }}</dd>
+
+</dl>
+
+<button *ngIf="name !=='Spiderman'" (click)="changeHero()" class="btn btn-primary mx-2" >
+  cambiar nombre
+</button>
+
+<!--
+  Si queremos mostrar el dato esto debe ser true,
+  de lo contrario false, esto igual acepta condiciones
+  de expresion
+-->
+<button *ngIf=" age !== 25 "  (click)=" changeEdad()" class="btn btn-primary">
+  cambiar edad
+</button>
+
+<button (click)="resetForm()" class="btn btn-primary mx-2">
+  Reset
+</button>

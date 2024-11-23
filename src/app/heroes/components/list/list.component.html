@@ -1,0 +1,32 @@
+
+
+
+<button *ngIf="heroNames.length > 0" (click)="removeLastHero()" class="btn btn-outline-danger">
+  Borrar Ultimo Heroe
+</button>
+
+
+<!--
+  ngIf Esta evaluando si deletedHero es true osea que existe
+  de lo contrario pasara al else y mostrara la referencia de
+  nothingWasDeleted, cabe destacar que puede llevar cualquier
+  nombre solo es para hacer referencia
+-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>Héroe Borrado <small class="text-danger">{{deletedHero}}</small></h3>
+</div>
+<!--
+ aca se hace referencia a nothingWasDeleted
+ y este ng-template no existe hasta que le llama
+directamente
+-->
+<ng-template #nothingWasDeleted>
+  <h3>No a borrado nada</h3>
+</ng-template>
+
+<h3 class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item"> {{name}} </li>
+
+</h3>
+
+
